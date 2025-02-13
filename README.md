@@ -12,7 +12,8 @@ The Financial Analysis Agent System is an intelligent system that combines SEC f
 - Agentverse platform integration
 
 ## System Architecture
-<img width="628" alt="Screenshot 2025-01-31 at 11 00 49 AM" src="https://github.com/user-attachments/assets/f61755d9-7968-4fdd-b86b-fc09bcd17ce9" />
+<img width="636" alt="Screenshot 2025-01-23 at 6 30 42 AM" src="https://github.com/user-attachments/assets/9027f68c-9601-46d3-b509-f0d1a2b65d41" />
+
 
 ### Components
 1. **Financial Analysis Agent**
@@ -20,9 +21,9 @@ The Financial Analysis Agent System is an intelligent system that combines SEC f
    - Search Agent: Handles market research
    - SEC Agent: Analyzes financial documents
 
-2. **Tool uAgents**
-   - Search Tool uAgent: Wraps Tavily search service
-   - RAG Tool uAgent: Provides document analysis
+2. **Tools Agents**
+   - Search Tool : Tavily search API
+   - RAG Tool : Provides document analysis through Qdrant vector database
 
 3. **Primary Agent**
    - Routes user queries
@@ -72,8 +73,6 @@ TAVILY_API_KEY=your_tavily_key
 AGENTVERSE_API_KEY=your_agentverse_key
 FINANCIAL_AGENT_KEY=your_agent_seed
 PRIMARY_AGENT_KEY=your_primary_agent_seed
-SEARCH_TOOL_SEED=your_search_tool_seed
-RAG_TOOL_SEED=your_rag_tool_seed
 ```
 
 ## Running the System
@@ -145,7 +144,7 @@ src/
 │   └── supervisor.py       
 ├── agentverse/
 │   └── register.py         # Agent registration
-├── tool_agents/           
+├── tools/           
 │   ├── search_tool/        # Search microservice
 │   └── rag_tool/          # RAG microservice
 └── utils/
@@ -155,12 +154,12 @@ src/
 ## Development Guide
 
 ### Adding New Tools
-1. Create new tool uAgent:
+1. Create new tools:
 ```
-src/tool_agents/new_tool/
+src/tools/
 ├── __init__.py
-├── agent.py          # uAgent implementation
-└── service.py        # Tool service logic
+├── tool3.py       
+└── tool4.py       
 ```
 
 2. Register with Agentverse:
