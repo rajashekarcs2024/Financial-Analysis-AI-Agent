@@ -1,0 +1,11 @@
+langchain==0.2.15
+langchain_openai==0.1.23
+langchain_core==0.2.35
+langgraph==0.2.14
+python-dotenv
+tavily-python
+tiktoken
+pymupdf
+qdrant-client
+pydantic>=2.0.0
+
